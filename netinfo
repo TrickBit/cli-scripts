@@ -16,11 +16,3 @@ do
   echo -e "\n${nic} Nameservers (IP4):"
   nmcli device show ${nic} | grep IP4.DNS
 done
-
-
-# read nic gw  <<< $( ip route | awk '/default/ {print $5"  "$3}')
-# read IP <<< $( ip addr show ${nic} | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
-# echo -e "Your network device is\t: ${nic}"
-# echo -e "Your gateway is\t\t: ${gw}"
-# echo -e "\nA list of yor nameservers follows"
-# nmcli device show ${nic} | grep IP4.DNS
