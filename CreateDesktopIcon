@@ -1,0 +1,16 @@
+#!/bin/bash
+fn=$(basename -- "${1}")
+ext="${fn##*.}"
+bn="${fn%.*}"
+echo "[Desktop Entry]
+Version=1.0
+Name=${bn}
+GenericName=${bn}
+Exec=/opt/google/chrome/google-chrome ${1}
+Terminal=false
+Icon=text-html
+Type=Application
+Categories=Network;WebBrowser;Favorites;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito" >  ~/Desktop/${bn}.desktop
+chmod 755 ~/Desktop/${bn}.desktop
